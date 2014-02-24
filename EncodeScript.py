@@ -130,9 +130,10 @@ encode(count)
 print (lol)
 
 def decode(count):                    #I need to reverse the count on this one (because of how count is important in the encoding process)
-    while count > 0:
+    zero = 0
+    while zero < count:
         lol[(count-1)] = lol[(count-1)] // (count ** (count/3.0))
-        count = count - 1
+        zero = zero + 1
 decode (count)
 
 print (lol)
