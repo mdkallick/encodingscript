@@ -1,4 +1,3 @@
-
 input = input('enter the text you want to encode: ')
 lol = list(input)
 print (lol)
@@ -124,7 +123,7 @@ count = length
 
 def encode(count):
     while count > 0:
-        lol[(count-1)] = lol[(count-1)] * 26
+        lol[(count-1)] = lol[(count-1)] * (count **(3/count))
         count = count - 1
 encode(count)
 
@@ -132,7 +131,7 @@ print (lol)
 
 def decode(count):
     while count > 0:
-        lol[(count-1)] = lol[(count-1)] // 26
+        lol[(count-1)] = lol[(count-1)] // (count ** (count/3))
         count = count - 1
 decode (count)
 
