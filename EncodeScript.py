@@ -123,15 +123,15 @@ count = length
 
 def encode(count):
     while count > 0:
-        lol[(count-1)] = lol[(count-1)] * (count **(3/count))
+        lol[(count-1)] = lol[(count-1)] * (count **(3.0/count))
         count = count - 1
 encode(count)
 
 print (lol)
 
-def decode(count):
+def decode(count):                    #I need to reverse the count on this one (because of how count is important in the encoding process)
     while count > 0:
-        lol[(count-1)] = lol[(count-1)] // (count ** (count/3))
+        lol[(count-1)] = lol[(count-1)] // (count ** (count/3.0))
         count = count - 1
 decode (count)
 
