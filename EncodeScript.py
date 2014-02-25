@@ -235,10 +235,10 @@ decode(count)
 #print (lol)
 
 
-final = input('do you want to decode your message?(yes or no)  ')
 
-def finaldecode(fi):
 
+def finaldecode():
+    final = input('do you want to decode your message?(yes or no)  ')
     if final == 'yes':
         replacenumbers(length)
         # print (lol)
@@ -248,4 +248,4 @@ def finaldecode(fi):
         print (finalproduct)
     else:
         print ('goodbye')
-finaldecode(final)
+finaldecode()
