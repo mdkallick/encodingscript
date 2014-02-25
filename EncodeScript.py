@@ -1,6 +1,6 @@
-input = input('enter the text you want to encode: ')
-lol = list(input)
-print (lol)
+enteredtext = input('enter the text you want to encode: ')
+lol = list(enteredtext)
+# print (lol)
 length = len(lol)
 
 
@@ -117,29 +117,30 @@ def replaceletters():
             lol[(length-1)] = z
             length = length - 1
 replaceletters()
-print (lol)
+#print (lol)
 
 count = length
 
 def encode(count):
     while count > 0:
-        lol[(count-1)] = lol[(count-1)] * (count **(3.0/count))
+        lol[(count-1)] = (lol[(count-1)] ** (3.0/(count)))
         count = count - 1
-encode(count)
 
-print (lol)
 
-def decode(count):                    #I need to reverse the count on this one (because of how count is important in the encoding process)
+def decode(count):                  
+    countdc = count
     zero = 0
-    while zero < count:
-        lol[(count-1)] = lol[(count-1)] // (count ** (count/3.0))
+#    print (count)
+    while zero < countdc:
+        lol[(count-1)] = int(round((lol[(count-1)] ** ((count)/3)),0))
+#        print (lol[count-1])
+#        print ('lol')
         zero = zero + 1
-decode (count)
+        count = count - 1
 
-print (lol)
 
-def replacenumbers():
-    lengthrn = len(lol)
+def replacenumbers(length):
+    lengthrn = length
     while lengthrn > 0:
         if lol[(lengthrn-1)] == 1:
             lol[(lengthrn-1)] = 'a'
@@ -220,10 +221,31 @@ def replacenumbers():
             lol[(lengthrn-1)] = 'z'
             lengthrn = lengthrn - 1
             
-replacenumbers()
-print (lol)
-
-finalproduct = ''.join(lol)
 
 
-print (finalproduct)
+encode(count)
+print ('encoded value')
+
+print((lol))
+
+count = length
+
+decode(count)
+#print ('decoded value')
+#print (lol)
+
+
+final = input('do you want to decode your message?(yes or no)  ')
+
+def finaldecode(fi):
+
+    if final == 'yes':
+        replacenumbers(length)
+        # print (lol)
+        finalproduct = ''.join(lol)
+
+
+        print (finalproduct)
+    else:
+        print ('goodbye')
+finaldecode(final)
